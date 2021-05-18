@@ -82,7 +82,7 @@ ReactDOM.render(
     },
     body: JSON.stringify(data)
   }
-    fetch('http://localhost:3001/login', options).then(function (response)
+    fetch('https://week-calendar-back.herokuapp.com/login', options).then(function (response)
   {
     if(response.status === 400)
     {alert("First name and Last name combination already taken");}
@@ -104,7 +104,7 @@ ReactDOM.render(
     },
   }
 
-  fetch('http://localhost:3001/login/?' + new URLSearchParams({fname: fname, lname: lname}), options).then(function (response)
+  fetch('https://week-calendar-back.herokuapp.com/login/?' + new URLSearchParams({fname: fname, lname: lname}), options).then(function (response)
   {
     if(response.status === 404)
     {
@@ -138,7 +138,7 @@ ReactDOM.render(
     },
     body: JSON.stringify(data)
   }
-    fetch('http://localhost:3001/delete/', options);
+    fetch('https://week-calendar-back.herokuapp.com/delete/', options);
 
   }
 
@@ -176,7 +176,7 @@ function _dateChangePut(){
   body: JSON.stringify(data)
 }
 
-  fetch('http://localhost:3001/dateUpdate/', options);
+  fetch('https://week-calendar-back.herokuapp.com/dateUpdate/', options);
 }
 
   function _handleDateChange(e) {
@@ -282,7 +282,7 @@ function _dateChangePut(){
     }
     if (fname !== "" && lname !== "")
     {
-      fetch('http://localhost:3001/weekGet?' + new URLSearchParams({fname:fname, lname:lname, weekNum:current}),options).then (function (response)
+      fetch('https://week-calendar-back.herokuapp.com/weekGet?' + new URLSearchParams({fname:fname, lname:lname, weekNum:current}),options).then (function (response)
       {
         if(response.status === 404)
         {
@@ -324,7 +324,7 @@ function _dateChangePut(){
   }
     if (fname !== "" && lname !== "")
     {
-      fetch('http://localhost:3001/weekUpdate/', options).then(response => response.text()).then(data => console.log(data));
+      fetch('https://week-calendar-back.herokuapp.com/weekUpdate/', options).then(response => response.text()).then(data => console.log(data));
     }
   }
 
