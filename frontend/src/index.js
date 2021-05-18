@@ -139,7 +139,7 @@ ReactDOM.render(
     body: JSON.stringify(data)
   }
     fetch('https://week-calendar-back.herokuapp.com/delete/', options);
-
+    window.location.reload()
   }
 
 
